@@ -97,13 +97,13 @@
     "typescript": "^5.8.2",
     "vite": "^6.1.0"
   },
-  {
-  "devDependencies": {
-    "remix": "^1.XX.X"
-  },
-  "scripts": {
-    "build": "remix vite:build"
-  }
+    {
+    "devDependencies": {
+      "remix": "^1.XX.X"
+    },
+    "scripts": {
+      "build": "remix vite:build"
+    }
 }
-}
+
 
