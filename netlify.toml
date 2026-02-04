@@ -1,3 +1,28 @@
-[build] 
-  command = "npm run build" 
+[build]
+  command = "npm run build"
   publish = "dist"
+
+# =============================
+# Security Headers (hardening)
+# =============================
+[[headers]]
+  for = "/*"
+  [headers.values]
+
+    # Anti clickjacking
+    X-Frame-Options = "DENY"
+
+    # Impede MIME sniff
+    X-Content-Type-Options = "nosniff"
+
+    # HTTPS obrigatório por 2 anos
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+
+    # Referrer seguro
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+    # Bloqueia APIs sensíveis do browser
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
+
+    # CSP básica e segura para Vite/React
+    Content-Security-Policy = "default-src 'self'; img-src 'self' data: https:; font-src 'self' data:; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:;"
